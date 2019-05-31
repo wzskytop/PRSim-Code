@@ -36,9 +36,9 @@ make
 
 
 ## Run the example:
-running process can be divided into four steps:
-(1) Preprocess phase: generate index and sort them.
-(2) Query phase: calculate the single-source SimRank.
+Running process can be divided into four steps:  
+(1) Preprocess phase: generate index and sort them.  
+(2) Query phase: calculate the single-source SimRank.  
 ```
 ./PRSim -d dataset/toy_graph.txt -f toy_graph -algo PREPROCESS -e 0.5
 ./PRSim -d dataset/toy_graph.txt -f toy_graph -algo QUERY -e 0.5
