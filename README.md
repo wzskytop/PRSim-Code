@@ -25,14 +25,14 @@ make
 
 
 ## Parameters:
-- -d <dataset> 
-- -f <filelabel>
-- -algo <algorithm>
-- [-e <epsilon> (default 0.1)]
-- [-c <damping factor> (default 0.6)]
-- [-qn <querynum> (default 50)]
-- [-use_idx <whether using index> (default true,indexnum=sqrt(n))]
-- [-check_dup <check duplicate edges> (default 0)]
+- -d \<dataset\> 
+- -f \<filelabel\>
+- -algo \<algorithm\>
+- [-e \<epsilon\> (default 0.1)]
+- [-c \<damping factor\> (default 0.6)]
+- [-qn \<querynum\> (default 50)]
+- [-use_idx \<whether using index\> (default true,indexnum=sqrt(n))]
+- [-check_dup \<check duplicate edges\> (default 0)]
 
 
 ## Run the example:
