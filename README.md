@@ -1,5 +1,5 @@
 # PRSim: Sublinear Time SimRank Computation on Large Power-Law Graphs
-Authors: Zhewei Wei(zhewei@ruc.edu.cn), Xiaodong He(hexiaodong_1993@ruc.edu.cn)
+Corresponding Authors: Zhewei Wei(zhewei@ruc.edu.cn), Xiaodong He(hexiaodong_1993@ruc.edu.cn), Hanzhi Wang (wanghzccls@163.com)
 
 Please cite our paper if you choose to use our code.
 ```
