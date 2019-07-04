@@ -3,12 +3,12 @@ Corresponding Authors: Zhewei Wei(zhewei@ruc.edu.cn), Xiaodong He(hexiaodong_199
 
 Please cite our paper if you choose to use our code.
 ```
-> @article{Wei2019PRSimST,
-   title   = {PRSim: Sublinear Time SimRank Computation on Large Power-Law Graphs},
-   author  = {Zhewei Wei and Xiaodong He and Xiaokui Xiao and Sibo Wang and Yu Liu and Xiaoyong Du and Ji-Rong Wen},
-   journal = {ArXiv},
-   year    = {2019},
-   volume  = {abs/1905.02354}
+@inproceedings{Wei:2019:PST:3299869.3319873,
+ author = {Wei, Zhewei and He, Xiaodong and Xiao, Xiaokui and Wang, Sibo and Liu, Yu and Du, Xiaoyong and Wen, Ji-Rong},
+ title = {PRSim: Sublinear Time SimRank Computation on Large Power-Law Graphs},
+ booktitle = {Proceedings of the 2019 International Conference on Management of Data},
+ series = {SIGMOD '19},
+ year = {2019},
 }
 ```
 
