@@ -390,9 +390,6 @@ class SimStruct{
             }
             sort(tempVec.begin(), tempVec.end(), maxScoreCmp);
             for(int j = tempVec.size() - 1; j >= 0; j--){
-		if(i<1000){
-			cout << i <<" node="<<tempVec[j].first<<" insize="<<tempVec[j].second<<endl;
-		}
 		fout << i << " " << tempVec[j].first << "\n";
             }
         }
