@@ -64,7 +64,7 @@ class SimStruct{
     int total_back_count;
     double t_idx;
     double t_back;
-    SimStruct(string name, string file_lable, double eps, double r_max, double c) {
+    SimStruct(string name, string file_lable, double eps, double c) {
         filelabel = file_lable;
         hit_idx_count = 0;
         total_back_count = 0;
@@ -75,7 +75,7 @@ class SimStruct{
         C_value = c;
         sqrtC = sqrt(C_value);
         epsilon = eps;
-        rmax = r_max;
+	rmax = (1-sqrtC)*(1-sqrtC)/25*epsilon;
 	back_nr = (int)(20*log(vert)/epsilon/epsilon);
 	nr = (int)(0.1*back_nr);
 
@@ -390,6 +390,9 @@ class SimStruct{
             }
             sort(tempVec.begin(), tempVec.end(), maxScoreCmp);
             for(int j = tempVec.size() - 1; j >= 0; j--){
+		if(i<1000){
+			cout << i <<" node="<<tempVec[j].first<<" insize="<<tempVec[j].second<<endl;
+		}
 		fout << i << " " << tempVec[j].first << "\n";
             }
         }

@@ -111,7 +111,6 @@ int main(int argc, char **argv){
     string algo;
     int querynum = -1;
     double eps = 0.1;
-    double rmax = 0.0002;
     double c = 0.6;
     int k = 50;
     int indexnum=0;
@@ -140,7 +139,6 @@ int main(int argc, char **argv){
                 cerr << "Invalid eps argument" << endl;
                 exit(1);
             }
-	    rmax = 0.002 * eps;
         } else if (!strcmp(argv[i], "-c")) {
             i = check_inc(i, argc);
             c = strtod(argv[i], &endptr);
@@ -196,7 +194,7 @@ int main(int argc, char **argv){
 	return 0;   
     }
 
-    SimStruct sim = SimStruct(filename, filelabel, eps, rmax, c);
+    SimStruct sim = SimStruct(filename, filelabel, eps, c);
     if(use_index){
    	indexnum=5*sqrt(sim.vert);//index_num=j0 
     }
@@ -226,7 +224,7 @@ int main(int argc, char **argv){
     //generate index,sort index and write index
     if(algo == "PREPROCESS"){
         cout<<"eps="<<eps<<endl;
-	cout<<"rmax="<<100*rmax<<endl;
+	cout<<"rmax="<<100*(sim.rmax)<<endl;
 	cout<<"indexnum="<<indexnum<<endl;
 	
 	string pgname = "pagerank/" + filelabel + ".txt";
@@ -255,7 +253,7 @@ int main(int argc, char **argv){
             if(!(input >> nodeId >> tempSim)){
 		break;
 	    }
-	    sim.backwardSearch(nodeId, data_idx, 100*rmax);
+	    sim.backwardSearch(nodeId, data_idx, 100*(sim.rmax));
         }
 	
         clock_t end = clock();
@@ -277,7 +275,7 @@ int main(int argc, char **argv){
 
     if(algo == "QUERY"){
 	cout<<"eps="<<eps<<endl;
-	cout<<"rmax="<<rmax<<endl;
+	cout<<"rmax="<<sim.rmax<<endl;
 	cout<<"indexnum="<<indexnum<<endl;
         
 	double vm, rss;
@@ -290,6 +288,7 @@ int main(int argc, char **argv){
 
 	process_mem_usage(vm, rss);
         double indexMem = rss - lastRss;
+        cout<<"indexMem="<<indexMem<<" KB"<<endl;
 
         string pagerankname = "pagerank/" + filelabel + ".txt";
         ifstream fpagerank;
@@ -319,7 +318,7 @@ int main(int argc, char **argv){
         }
     
 	fquery.close();    
-        cout << "index memory: "<< (indexMem/1024/1024)<<" GB" << endl;
+        cout << "index memory: "<< (indexMem*1.0/1024.0/1024.0)<<" GB" << endl;
 	cout << "avg time: " << sim.avg_time / (double) querynum << endl;
 	cout << "====single-source query done!===="<<endl;
     }
