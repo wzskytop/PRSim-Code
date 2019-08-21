@@ -36,16 +36,21 @@ make
 
 
 ## Run the example:
-Running process can be divided into four steps:  
+Before the running process, we should first generate the sorted data file in which each edge is sorted by its target node's indegree in ascending order. The sorted data file will be stored in “/dataset” named toy_graph_sorted.txt.
+```
+./PRSim -d dataset/toy_graph.txt -f toy_graph -algo SORT_INDEGREE_ASC
+```
+
+The running process can be divided into two steps:  
 (1) Preprocessing phase: generate the index and sort them.  
 (2) Querying phase: calculate the single-source SimRank.  
 ```
-./PRSim -d dataset/toy_graph.txt -f toy_graph -algo PREPROCESS -e 0.5
-./PRSim -d dataset/toy_graph.txt -f toy_graph -algo QUERY -e 0.5
+./PRSim -d dataset/toy_graph_sorted.txt -f toy_graph -algo PREPROCESS -e 0.5
+./PRSim -d dataset/toy_graph_sorted.txt -f toy_graph -algo QUERY -e 0.5
 ```
 
 
 ## Instructions:
-(1) datatsets/: store datasets files.  
+(1) datatset/: store datasets files.  
 (2) query/: store query nodes files.  
 (3) algo_result/: store results files.  
