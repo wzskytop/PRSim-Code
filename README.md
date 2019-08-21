@@ -36,7 +36,7 @@ make
 
 
 ## Run the example:
-Before the running process, we should first generate the sorted data file in which each edge is sorted by its target node's indegree in ascending order. The sorted data file will be stored in “/dataset” named toy_graph_sorted.txt.
+Before the running process, we should first generate the sorted data file in which each edge is sorted by its target node's indegree in ascending order. The sorted data file will be stored in “/dataset” named "toy_graph_sorted.txt".
 ```
 ./PRSim -d dataset/toy_graph.txt -f toy_graph -algo SORT_INDEGREE_ASC
 ```
