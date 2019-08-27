@@ -110,7 +110,7 @@ void evaluate(string qfile,string algofile,string gtfile){
         double max_err = 0, avg_err = 0, precision = 0;
         int j0,jnode;
 	
-	for(int j=0;j<gtNodes.size();j++){
+	for(int j=0;j<k;j++){
 	     	double tmp_err = abs(gtanswers[j].first-algovalues[gtanswers[j].second]);
 		if(max_err<tmp_err){
 			max_err=tmp_err;
@@ -119,7 +119,7 @@ void evaluate(string qfile,string algofile,string gtfile){
 		avg_err +=tmp_err;
 	}
 	avg_max_error += max_err;
-        avg_avg_error += avg_err / gtNodes.size();
+        avg_avg_error += avg_err / k;
 
         if(gtanswers[k-1].first > 0){
             precision = calPrecision(topk_gt_Nodes,topk_algo_Nodes,k);
