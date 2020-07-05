@@ -161,7 +161,7 @@ class SimStruct{
         return false;
     }
 
-    //Estimate pi(u,w) using method FORA
+    //Estimate pi(u,w)
     unordered_map<int, vector<pair<int, double> > > foraMap(int u){
         unordered_map<int, unordered_map<int, double> > answer;
         unordered_map<int, vector<pair<int, double> > > realAnswer;
